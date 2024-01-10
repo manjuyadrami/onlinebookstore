@@ -1,11 +1,18 @@
 pipeline {  
     agent any  
         stages {  
-       	    stage("git_checkout") {  
-           	    steps {  
-              	    echo "cloning repository" 
-              	    echo "repo cloned successfully"  
-              	    }  
-         	    } 
-        }
+       	    stage("clone code"){
+        print "clone"
+    }
+      stage("maven build"){
+        print "maven"
+    }
+      stage("upload artifact"){
+        print "upload"
+    }
+    
+       stage("deploy to dev"){
+        print "deploy"
+    }
+}
 }
